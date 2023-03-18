@@ -35,3 +35,9 @@
 // long 형은 l or L로 명시해줘야함
 long lnumber = 12345678900l;
 ```
+
+# floating point & error
+![img_1.png](img_1.png)
+
+   - 수를 (가수)×(밑수)^(지수)와 같이 유효숫자를 사용한 곱셈 형태로 표현
+   - [floating point error and its solution](FloatingPointError.java)
