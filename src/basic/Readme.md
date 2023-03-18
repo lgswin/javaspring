@@ -41,3 +41,14 @@ long lnumber = 12345678900l;
 
    - 수를 (가수)×(밑수)^(지수)와 같이 유효숫자를 사용한 곱셈 형태로 표현
    - [floating point error and its solution](FloatingPointError.java)
+
+
+# 지역 변수 자료형 없이 사용하기 (  자바 10 지원 됨 )
+   - Local variable type inference
+   - 추론 가능한 변수에 대한 자료형을 선언하지 않음
+   - 한번 선언하여 추론 된 변수는 다른 타입의 값을 대입 할 수 없음
+   - 지역 변수만 사용 가능
+   - [Sample code](LocalVariableType.java)
+
+
+
