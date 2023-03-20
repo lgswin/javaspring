@@ -1,6 +1,6 @@
-# Java 메모리 구조
+# Java의 객체
 
-## 1. 클래스가 로드되는 순서
+## 1. java 메모리에 클래스가 로드되는 순서
    1) 클래스가 메모리로 로드되어 클래즈(clazz)
        형태로 static영역에 위치<br>
        [ 클래즈의 구성요소 : 필드, 생성자, 메소드 ]
@@ -23,7 +23,6 @@
 | 지역 변수             | 메서드 영역 | 메서드가 호출될때, 생겨나고 메서드 종료시 소멸됨<br/>(초기화가 반드시 필요함, static변수 사용못함 |
 
 ## 3. JVM 메모리 구조
-
 | Method area<br/>(클래스)             |
 |-----------------------------------|
 | Call stack<br/>(main)             |
@@ -33,8 +32,10 @@
    1) call by value : read only
       - 메서드 호출시 매개변수로 넘겨주는 값, 지역변수로 복사
       - 수정을 해도 호출한 메서드의 값에는 전혀 영향이 없다.
+      - [sample code](PrimitivePramEx.java)
    2) call by reference : read & write
       - 메서드 호출시에 매개변수로 넘겨주는 주소값
       - 호출된 메서드에서 수정하면 호출된 메서드의 값에도 직접적인 영향
+      - [sample code](CallbyReference.java)
    
 
