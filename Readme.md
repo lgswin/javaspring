@@ -4,4 +4,4 @@
 
 ### [1. data](/src/basic/Readme.md) (1주차)
 ### [2. 반복문](/src/basic/forloop.md) (2주차) 
-### [3. 객체지향](/scr/object/object01.md) (3주차)
+### [3. 객체지향](/src/object/object01.md) (3주차)
