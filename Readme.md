@@ -5,3 +5,8 @@
 ### [1. data](/src/basic/Readme.md) (1주차)
 ### [2. 반복문](/src/basic/forloop.md) (2주차) 
 ### [3. 객체지향](/src/object/Readme.md) (3주차)
+    - java 메모리에 클래스가 로드되는 순서
+    - java 변수의 범위
+    - JVM 메모리 구조
+    - call by value, call by reference
+    - 실습

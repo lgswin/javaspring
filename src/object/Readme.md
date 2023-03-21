@@ -46,7 +46,7 @@
    - [Restaurant.java](Restaurant.java)
    - [RestaurantTest.java](RestaurantTest.java)
 
-## - 개체 02-09 실습
+## - 객체 02-09 실습
    - [Student.java](../refer_datatype/Student.java)
    - [Subject.java](../refer_datatype/Subject.java)
    - [SubjectTest.java](../refer_datatype/SubjectTest.java)
