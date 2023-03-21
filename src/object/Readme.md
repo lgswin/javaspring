@@ -38,4 +38,11 @@
       - 호출된 메서드에서 수정하면 호출된 메서드의 값에도 직접적인 영향
       - [sample code](CallbyReference.java)
    
+## 객체 02-08 복습 및 숙제 
+   - [Student.java](Student.java)
+   - [StudentTest.java](StudentTest.java)
+   - [Person.java](Person.java)
+   - [PersonTest.java](PersonTest.java)
+   - [Restaurant.java](Restaurant.java)
+   - [RestaurantTest.java](RestaurantTest.java)
 
