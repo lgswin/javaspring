@@ -38,7 +38,7 @@
       - 호출된 메서드에서 수정하면 호출된 메서드의 값에도 직접적인 영향
       - [sample code](CallbyReference.java)
    
-## 객체 02-08 복습 및 숙제 
+## - 객체 02-08 복습 및 숙제 
    - [Student.java](Student.java)
    - [StudentTest.java](StudentTest.java)
    - [Person.java](Person.java)
@@ -46,3 +46,7 @@
    - [Restaurant.java](Restaurant.java)
    - [RestaurantTest.java](RestaurantTest.java)
 
+## - 개체 02-09 실습
+   - [Student.java](../refer_datatype/Student.java)
+   - [Subject.java](../refer_datatype/Subject.java)
+   - [SubjectTest.java](../refer_datatype/SubjectTest.java)
