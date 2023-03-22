@@ -12,3 +12,4 @@
     - 실습
 ### - [객체 : Modifier, encapsulation](/src/object01/Readme.md) 
 ### - [객체의 협력 관계](/src/Cooperation/Readme.md)
+### - [static, 싱글톤 패턴](/src/StaticVariables/Readme.md)
