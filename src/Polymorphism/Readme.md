@@ -30,3 +30,37 @@ TV t = new CaptionTV();
 - [Striker.java](Striker.java)
 - [MidFielder.java](MidFielder.java)
 - [Defender.java](Defender.java)
+
+### 다형성으로인한 형변환
+- 형변환의 전제조건 : 상속, 구현관계에 있는 것만 객체타입 변환이 가능
+- 자손 타입ㅁ에서 조상타입으로 형변환은 생략가능하지만, 반대는 명시적 형변환을 반드시 해야한다.
+```java
+자손타입 -> 조상타입 (up-casting) : 형변환 생략가능 (조작 멤버갯수가 줄어듬)
+자손타입 <- 조상타입 (down-casting) : 형변환 생략불가 (조작 멤버갯수가 많아짐)
+자손끼리는 casting 안됨!
+```
+
+### instanceof 연산자
+- 참조변수가 참조하는 인스턴스의 실제 타입을 체크하는데 사용한다.
+- 이항연산자, 연산결과는 boolean값이 된다.
+- instanceof의 연산결과가 true이면, 해당 타입으로 형변환이 가능하다.
+```java
+SportCar sportCar = new SportCar();
+
+if (sportCar instanceof SportCar) {
+    System.out.println("SportCar로 타입변환이 가능합니다."
+}
+if (sportCar instanceof Car) {
+System.out.println("Car로 타입변환이 가능합니다."
+}
+if (sportCar instanceof Object) {
+System.out.println("Object로 타입변환이 가능합니다."
+}
+if (sportCar instanceof PoliceCar) {
+System.out.println("PoliceCar로 타입변환이 가능합니다."
+}
+```
+- instanceof 연산자는 실제 형변환이 가능한지 알아볼때  쓰는것이 유용하다.
+
+
+
