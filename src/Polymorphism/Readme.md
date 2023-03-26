@@ -119,3 +119,78 @@ parent.type(new Child());
 - [Parent.java](Parent.java)
 - [Child.java](Child.java)
 - [ReferEx.java](ReferEx.java)
+
+
+### 매개변수의 다형성
+- 참조타입 매개변수는 메서드 호출시, 자신과 같은 타입이거나 또는 자손타입의 주소를 즉, 인스턴스를 넘겨주도록 한다.
+```java
+class Product {
+    int price;
+    int bonusPoint;
+}
+
+class TV extends Product {}
+class Computer extends Product {}
+class Audio extends Product {}
+
+class Buyer {
+    int money;
+    int bonuesPoint;
+}
+```
+- 이렇게 클래스가 있을때 buy 메서드의 매개변수를 TV t로 하면 TV로 선언된 instance만 받을 수 있고 다른 물건들에 대해 별개의 method를 오버라이딩해서 구현해야한다.
+```java
+void buy(TV t) {
+    money -= t.price;
+    bonusPoint += t.bonusPoint;
+}
+```
+- 그러나 다형성을 이용해서 Product로 선언된 instance를 매개변수로 쓴다면 하나의 method로 구현가능하다.
+```java
+Product p1 = new TV();
+Product p2 = new Computer();
+Product p3 = new Audio();
+
+void buy(Product p) {
+    money -= t.price;
+    bonusPoint += t.bonusPoint;
+}
+```
+- [PlyArgument.java](PolyArgument.java)
+- [Product.java](Product.java)
+- [TV.java](TV.java)
+- [Computer.java](Computer.java)
+- [Audio.java](Audio.java)
+- [Apple.java](Apple.java)
+- [Buyer.java](Buyer.java)
+
+### 여러종류의 객체를 배열로
+조상타입의 배열에는 조상뿐만 아니라 자손의 객체도 담을 수 있다. (다형성)
+```java
+Product p1 = new TV();
+Product p2 = new Computer();
+Product p3 = new Audio();
+```
+-> 
+```java
+Product p[]] = new Product[3];
+p[0] = new TV();
+p[1] = new Computer();
+p[2] = new Audio();
+```
+- 배열은 메모리 관리가 비효율적이라 Vector -> ArrayList, LinkedList
+```java
+Product[] cart = new Product[10];
+//...
+void buy (Product p) {
+    cart[i++] = p;
+}
+```
+-> 
+```java
+Vector cart = new Vector();
+//...
+void buy (Product p) {
+    cart.add(p);
+}
+```
