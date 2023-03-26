@@ -194,3 +194,12 @@ void buy (Product p) {
     cart.add(p);
 }
 ```
+- 객체배열과 상속관계를 이용한 다형성 구현 연습
+- Book, CD, ConversionBook 상품을 입력받고 배열추가로 다형성 구현
+
+![img.png](img.png)
+- [NewProduct.java](NewProduct.java)
+- [Book.java](Book.java)
+- [CompactDisk.java](CompactDisk.java)
+- [ConversationBook.java](ConversationBook.java)
+- [ProductEx.java](ProductEx.java)
