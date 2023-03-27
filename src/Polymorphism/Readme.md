@@ -178,6 +178,19 @@ p[0] = new TV();
 p[1] = new Computer();
 p[2] = new Audio();
 ```
+
+- 객체배열과 상속관계를 이용한 다형성 구현 연습
+- Book, CD, ConversionBook 상품을 입력받고 배열추가로 다형성 구현
+
+![img.png](img.png)
+- [NewProduct.java](NewProduct.java)
+- [Book.java](Book.java)
+- [CompactDisk.java](CompactDisk.java)
+- [ConversationBook.java](ConversationBook.java)
+- [ProductEx.java](ProductEx.java)
+
+
+
 - 배열은 메모리 관리가 비효율적이라 Vector -> ArrayList, LinkedList
 ```java
 Product[] cart = new Product[10];
@@ -194,12 +207,6 @@ void buy (Product p) {
     cart.add(p);
 }
 ```
-- 객체배열과 상속관계를 이용한 다형성 구현 연습
-- Book, CD, ConversionBook 상품을 입력받고 배열추가로 다형성 구현
-
-![img.png](img.png)
-- [NewProduct.java](NewProduct.java)
-- [Book.java](Book.java)
-- [CompactDisk.java](CompactDisk.java)
-- [ConversationBook.java](ConversationBook.java)
-- [ProductEx.java](ProductEx.java)
+- Vector를 이용한 연습 (Vector는 모든 객체를 담을수 있다)
+- [Board.java](Board.java)
+- [BoardEx.java](BoardEx.java)
