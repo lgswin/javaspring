@@ -1,7 +1,7 @@
 # Tips
 
-### tomcat 서버 port 변경
-\apache-tomcat-9.0.73\conf\server.xml
+### tomcat 서버 port 변경 (sts3 에 있는 server.xml Path 임)
+\workspace-sts-3.9.17.RELEASE\Servers\Tomcat v9.0 Server at localhost-config\server.xml
 ```xml
     <Connector port="8080" protocol="HTTP/1.1"
                connectionTimeout="20000"
