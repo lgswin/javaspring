@@ -21,5 +21,5 @@
 ---------------------------
 # Spring 정리
 
-### - [tomcat 서버 port 변경](/Spring/Readme.md#tomcat 서버 port 변경)
-### - [Method parameter 이름 얻어오기](/Spring/Readme.md#Method parameter 이름 얻어오기)
+### - [tomcat 서버 port 변경](/Spring/Readme.md#tomcat-서버-port-변경)
+### - [Method parameter 이름 얻어오기](/Spring/Readme.md#Method-parameter-이름 얻어오기)
