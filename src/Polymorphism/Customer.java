@@ -1,11 +1,11 @@
-package ObjectInheritance;
+package Polymorphism;
 
 public class Customer {
     protected int customerID;
     protected String customerName;
     protected String customerGrade;
-    public int bonusPoint;
-    public double bonusRatio;
+    int bonusPoint;
+    double bonusRatio;
 //
 //    public Customer() {
 //        customerGrade = "SILVER";
@@ -19,7 +19,7 @@ public class Customer {
         this.customerName = customerName;
         customerGrade = "SILVER";
         bonusRatio = 0.01;
-        System.out.println("Customer(int, String) call");
+        //System.out.println("Customer(int, String) call");
     }
 
     public int calcPrice(int price) {
