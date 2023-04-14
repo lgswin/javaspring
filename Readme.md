@@ -18,6 +18,7 @@
 ### - [abstract, access modifier](/src/Abstract/Readme.md)
 ### - [Polymorphism](/src/Polymorphism/Readme.md)
 ### - [Interface](/src/Interface/Readme.md)
+### - [Interface를 활용한 dao구현](/src/ch13/Readme.md)
 ---------------------------
 # Spring 정리
 
