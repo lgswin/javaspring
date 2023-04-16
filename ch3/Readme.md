@@ -54,3 +54,36 @@ config.txt
 car=com.fastcampus.ch3.diCopy1.SportCar
 engine=com.fastcampus.ch3.diCopy1.Engine
 ```
+
+## Guava 라이브러리를 이용해서 class 자동 검색 추가 방법을 위해.<br>
+Guava library import <br>
+pom.xml
+```xml
+		<!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>31.1-jre</version>
+		</dependency>
+```
+@Component 붙은 클래스를 찾아서 map에 저장한다.
+```java
+@Component class Car {}
+@Component class SportCar extends Car {}
+@Component class Truck extends Car {}
+class Engine{}
+```
+```java
+ClassLoader classLoader = AppContext.class.getClassLoader();
+ClassPath classPath = ClassPath.from(classLoader);
+
+Set<ClassPath.ClassInfo> set = classPath.getTopLevelClasses("com.fastcampus.ch3.diCopy3");
+for (ClassPath.ClassInfo classInfo: set) {
+    Class clazz = classInfo.load();
+    Component component = (Component) clazz.getAnnotation(Component.class);
+    if (component != null) {
+        String id = StringUtils.uncapitalize(classInfo.getSimpleName());
+        map.put(id, clazz.newInstance());
+    }
+}
+```
