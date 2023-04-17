@@ -87,3 +87,16 @@ for (ClassPath.ClassInfo classInfo: set) {
     }
 }
 ```
+4. 객체 찾기 - by Name, by Type
+```java
+    Object getBean(Class clazz) {
+        for (Object obj: map.values()) {
+            if (clazz.isInstance(obj))
+                return obj;
+        }
+        return null;
+    }
+```
+```java
+Car car2 = (Car) ac.getBean(Car.class);
+```
