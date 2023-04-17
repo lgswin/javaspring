@@ -100,3 +100,42 @@ for (ClassPath.ClassInfo classInfo: set) {
 ```java
 Car car2 = (Car) ac.getBean(Car.class);
 ```
+
+5. 객체 자동 연결하기 - @Autowired (by Type)
+
+```java
+import org.springframework.beans.factory.annotation.Autowired;
+
+class Car {
+    @Autowired Engine engine;
+    @Autowired Door door;
+}
+```
+```java
+    private void doAutowireted() {
+        // map에 저장된 객체에 iv중에 @Autowired가 붙어 있으면
+        // map에서 iv의 타입에 맞는 객체를 찾아서 연결 (객체의 주소를 iv 저장)
+        for (Object bean : map.values()) {
+            for (Field fld : bean.getClass().getDeclaredFields())
+                if (fld.getAnnotation(Autowired.class) != null) {
+                    try {
+                        fld.set(bean, getBean((fld.getType())));
+                    } catch (IllegalAccessException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+        }
+    }
+```
+5. 객체 자동연결하기 - @Resource (by Name) - Project structure -> Library -> + (java) -> Tocat > lib 추가 필요
+```java
+class Car {
+    @Resource Engine engine; // 첫글자 소문자인 engine을 찾아 찾아지면 테이블에 저장
+    @Resource Door door;
+}
+```
+```java
+class Car {
+    @Resource(name="engine2") Engine engine; // 찾고 싶은 class명을 지정할수 있음
+    @Resource Door door;
+```
