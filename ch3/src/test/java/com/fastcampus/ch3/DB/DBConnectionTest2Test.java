@@ -11,6 +11,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.Date;
 
 import static org.junit.Assert.*;
@@ -20,14 +21,22 @@ import static org.junit.Assert.*;
 public class DBConnectionTest2Test {
     @Autowired
     DataSource ds;
+    final int FAIL = 0;
 
+    @Test
+    public void updateUserTest() throws Exception {
+        User user = new User("asdf33", "1234", "zzz@zzz.com", new Date(), "fb", new Date());
+        int rowCnt = updateUser(user);
+
+        assertTrue(rowCnt ==1);
+    }
     @Test
     public void insertUserTest() throws Exception {
         User user = new User("asdf33", "1234", "aaaa@aaa.com", new Date(), "fb", new Date());
         deleteAll();
         int rowCnt = insertUser(user);
 
-        assertTrue(rowCnt ==1);
+        assertTrue(rowCnt !=FAIL);
     }
 
     @Test
@@ -131,7 +140,31 @@ public class DBConnectionTest2Test {
 
     // 과제
     public int updateUser(User user) throws Exception {
-        return 0;
+        int rowCnt = FAIL;
+
+        String sql = "update user_info " +
+                "set pwd = ?, name = ?, email = ?, birth =?, sns=?, reg_date=?" +
+                "where id =? ";
+
+        // try-with-resources - since jdk7
+        try (
+            Connection conn = ds.getConnection();
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+        ){
+            pstmt.setString(1, user.getPwd());
+            pstmt.setString(2, user.getName());
+            pstmt.setString(3, user.getEmail());
+            pstmt.setDate(4, new java.sql.Date(user.getBirth().getTime()));
+            pstmt.setString(5, user.getSns());
+            pstmt.setTimestamp(6, new java.sql.Timestamp(user.getReg_date().getTime()));
+            pstmt.setString(7, user.getId());
+
+            rowCnt = pstmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return FAIL;
+        }
+        return rowCnt;
     }
     @Test
     public void springJdbcConnectionTest() throws Exception{
