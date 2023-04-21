@@ -23,11 +23,14 @@ public class A1DaoTest {
     @Autowired
     DataSource ds;
 
+    @Autowired
+    DataSourceTransactionManager tm;
+
     @Test
     public void insertTest() throws Exception {
         // 둘다 성공했을때만 db upate 되려면?
 
-        PlatformTransactionManager tm = new DataSourceTransactionManager(ds);
+//        PlatformTransactionManager tm = new DataSourceTransactionManager(ds);
         TransactionStatus status = tm.getTransaction(new DefaultTransactionAttribute());
         try {
             a1Dao.deleteAll();
