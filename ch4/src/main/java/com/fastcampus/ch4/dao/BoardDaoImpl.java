@@ -27,7 +27,10 @@ public class BoardDaoImpl implements BoardDao {
         Map map = new HashMap();
         map.put("bno", bno);
         map.put("writer", writer);
-        return session.delete(namespace+"delete", map);
+        // System.out.println("bno = " + bno + " / writer = " + writer);
+        int result = session.delete(namespace+"delete", map);
+        System.out.println("delete result : " + result);
+        return result;
     } // int delete(String statement, Object parameter)
 
     public int insert(BoardDto dto) throws Exception {
