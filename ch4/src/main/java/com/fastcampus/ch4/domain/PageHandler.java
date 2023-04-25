@@ -93,7 +93,7 @@ public class PageHandler {
         this.pageSize = pageSize;
 
         totalPage = (int)Math.ceil(totalCnt /  (double)pageSize);
-        beginPage = page / naviSize * naviSize + 1;
+        beginPage = (page-1) / naviSize * naviSize + 1;
         endPage = Math.min(beginPage + naviSize-1, totalPage); // 1 + 10 => 11임 10까지만 나와야하므로 1빼줌
 
         showPrev = beginPage != 1;
